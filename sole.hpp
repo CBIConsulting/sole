@@ -199,7 +199,8 @@ namespace std {
     {
         static inline std::string put_time( const std::tm* tmb, const char* fmt ) {
             std::string s( 128, '\0' );
-            while( !strftime( &s[0], s.size(), fmt, tmb ) )
+						size_t written;
+            while( ! (written=strftime( &s[0], s.size(), fmt, tmb ) ) )
                 s.resize( s.size() + 128 );
 						s[written] = '\0';
 									
