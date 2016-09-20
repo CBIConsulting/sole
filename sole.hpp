@@ -201,6 +201,8 @@ namespace std {
             std::string s( 128, '\0' );
             while( !strftime( &s[0], s.size(), fmt, tmb ) )
                 s.resize( s.size() + 128 );
+						s[written] = '\0';
+									
             return s;
         }
     }
