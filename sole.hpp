@@ -204,7 +204,7 @@ namespace std {
                 s.resize( s.size() + 128 );
 						s[written] = '\0';
 									
-            return s;
+            return s.c_str();
         }
     }
 #endif
